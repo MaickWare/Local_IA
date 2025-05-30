@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IA Local con Voz</title>
+  <link rel="stylesheet" href="/Static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 IA Local con Voz</h1>
+    
+    <div id="chat" class="chat" readonly></div>
+    
+    <div class="input-area">
+      <input type="text" id="entradaUsuario" placeholder="Escribe tu mensaje...">
+      <button id="enviar">Enviar</button>
+      <button id="hablar">🎤 Hablar</button>
+    </div>
+  </div>
+
+<script>
+const entrada = document.getElementById("entradaUsuario");
+const enviar = document.getElementById("enviar");
+const hablar = document.getElementById("hablar");
+const chat = document.getElementById("chat");
+
+function escribir(texto) {
+  const mensaje = document.createElement("div");
+  mensaje.textContent = texto;
+  chat.appendChild(mensaje);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+async function enviarMensaje() {
+  const texto = entrada.value.trim();
+  if (!texto) return;
+  escribir("👤 Tú: " + texto);
+  entrada.value = "";
+
+  const res = await fetch("/preguntar", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ mensaje: texto })
+  });
+  const data = await res.json();
+  escribir("🤖 IA: " + data.respuesta);
+
+  await fetch("/voz", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ texto: data.respuesta })
+  });
+}
+
+enviar.addEventListener("click", enviarMensaje);
+entrada.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") enviarMensaje();
+});
+
+hablar.addEventListener("click", () => {
+  escribir("🎤 Escuchando...");
+  // Esta parte se puede ampliar para usar Web Speech API o backend
+});
+
+escribir("🧠 IA lista. Puedes escribir o hablar.");
+</script>
+    </div>
+    <footer>
+        <p>Desarrollado por <a href="MaickFeliz" target="_blank">MaickFeliz</a> con ❤️</p>
+    </footer>
+</body>
+</html>
