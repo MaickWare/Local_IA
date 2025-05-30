@@ -43,4 +43,4 @@ Si presentas fallas o errores no olvides en contactarme al interno para cualquie
 
 #Contacto
 
-[GitHub](https://github.com/happycode/Local_IA)
+[GitHub](https://github.com/MaickWare/Local_IA)
