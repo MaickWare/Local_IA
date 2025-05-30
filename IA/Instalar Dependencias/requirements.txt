@@ -1,4 +1,0 @@
-gpt4all
-pyttsx3
-SpeechRecognition
-pyaudio
