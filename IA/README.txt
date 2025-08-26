@@ -21,11 +21,11 @@ X:\IA
 
 1. Debemos descargar las dependencias necesarias y el motor de la IA
 
-2. Para descargar las dependencias necesarias, ejecutamos el siguiente comando en la consola de comandos:
+2. Para descargar las dependencias necesarias, necesitamos estar en la carpeta raiz del proyecto "Local_IA", una vez ahi ejecutamos el siguiente comando en la consola de comandos:
 
 pip install -r requirements.txt
 
-3. Una vez que se han descargado las dependencias, ejecutamos el siguiente comando para descargar el motor de la IA:
+3. Una vez que se hayan descargado las dependencias, ejecutamos el siguiente comando para descargar el motor de la IA:
 
 python Descargar.py
 
@@ -37,10 +37,11 @@ python main.py
 
 python voces.py
 
-Con este comando, miramos el listado delas voces que tengas descargadas y asi mismo acaomodarlas en el main.py para cambiar el indice de la lista de las voces.
+Con este comando, miramos el listado de las voces que tengas descargadas y asi mismo acaomodarlas en el main.py cambiando el indice de la lista de las voces.
 
-Si presentas fallas o errores no olvides en contactarme al interno para cualquier duda.
+Si presentas fallas o errores no olvides contactarme para cualquier duda.
 
 #Contacto
 
-[GitHub](https://github.com/MaickWare/Local_IA)
+[GitHub](https://github.com/MaickWare)
+[WhatsApp](+57 320 8763498)
